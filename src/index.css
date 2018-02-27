@@ -1,0 +1,64 @@
+/* Reset CSS */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Theme */
+
+body {
+  background-color: #000; /* #131116; */
+}
+
+/* Menu */
+
+#menu-bar {
+  float: right;
+  padding: 10px 10px 0px 0px;
+}
+
+#menu-bar a, #menu a{
+  text-decoration: none;
+  color: #fff;
+}
+
+#menu li{
+  font-size: 36px;
+  padding: 20px 0px 10px 20px;
+}
+
+/* Home */
+#home h1 {
+  font-style: normal;
+  font-weight: 300;
+  text-align: center;
+  font-size: 54px;
+}
+
+#home h2 {
+  text-align:center;
+  font-weight: 100;
+  font-size: 28px;
+}
+/* https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwiPGQ.woff2 */
+/* https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2 */
