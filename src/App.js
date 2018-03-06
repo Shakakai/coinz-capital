@@ -16,6 +16,17 @@ class Home extends React.Component {
 
     const loader = new THREE.JSONLoader();
     loader.load("/3d-model.json", this.onLoad.bind(this), null, null);
+
+    this.mouse = {
+        x: 0,
+        y: 0
+    };
+    window.addEventListener("mousemove", n=>this.onMouseMove(n))
+  }
+
+  onMouseMove(n) {
+      this.mouse.x = n.clientX - this.width / 2;
+      this.mouse.y = n.clientY - this.height / 2;
   }
 
   onLoad(geometry, materials) {
@@ -35,24 +46,47 @@ class Home extends React.Component {
   setupThree() {
 
     //camera
-    let camera = new THREE.PerspectiveCamera( 45, this.width / this.height, 1, 1000 );
-		camera.position.z = 1.5;
+    this.camera = new THREE.PerspectiveCamera( 10, this.width / this.height, 1, 1000 );
+		this.camera.position.z = 5;
 
     //scene
-    const scene = new THREE.Scene();
-		const ambient = new THREE.AmbientLight( 0xffffff );
-		scene.add( ambient );
+    this.scene = new THREE.Scene();
 
-    const meshMaterial = new THREE.MeshFaceMaterial(this.state.materials);
-    const mesh = new THREE.Mesh(this.state.geometry, meshMaterial);
-    scene.add(mesh);
+    const ambient = new THREE.AmbientLight(0xffffff);
+    this.scene.add(ambient);
+
+		const light = new THREE.PointLight( 16777215,3);
+    light.position.set(.5, 0, 1);
+    light.position.z = 1000;
+    light.position.multiplyScalar(700);
+
+    this.scene.add( light );
+
+    const materials = new THREE.MeshPhongMaterial({
+      color: 329224,
+      specular: 3355443,
+      shininess: 20,
+      wireframe: !0
+    });
+
+    this.mesh = new THREE.Mesh(this.state.geometry, materials);
+    this.scene.add(this.mesh);
 
     //WebGL renderer
     const canvas = document.getElementById("3dCanvas");
-    const renderer = new THREE.WebGLRenderer( { canvas: canvas } );
+    this.renderer = new THREE.WebGLRenderer( { canvas: canvas } );
 
-    renderer.render( scene, camera );
+    window.requestAnimationFrame(this.onAnimate.bind(this));
 
+    this.renderer.render( this.scene, this.camera );
+
+  }
+
+  onAnimate() {
+    this.mesh.rotation.x += .05 * (.001 * this.mouse.y - this.mesh.rotation.x);
+    this.mesh.rotation.y += .05 * (.001 * this.mouse.x - this.mesh.rotation.y);
+    this.renderer.render(this.scene, this.camera);
+    window.requestAnimationFrame(this.onAnimate.bind(this));
   }
 
   render() {
@@ -75,17 +109,19 @@ const Thesis = () => (
 const Team = () => (
   <div id="team">
     <h1>Team</h1>
-    <div class="member">
-      <img class="photo" src="/adam.jpeg" />
-      <span class="name">Adam Gering</span>
-      <span class="role">General Partner</span>
-      <span class="bio">lorem ipsum</span>
+    <div className="members">
+    <div className="member">
+      <img className="photo" src="/adam.jpeg" />
+      <span className="name">Adam Gering</span>
+      <span className="role">General Partner</span>
+      <span className="bio">lorem ipsum</span>
     </div>
-    <div class="member">
-      <img class="photo" src="/todd.jpeg" />
-      <span class="name">Todd Cullen</span>
-      <span class="role">General Partner</span>
-      <span class="bio">lorem ipsum</span>
+    <div className="member">
+      <img className="photo" src="/todd.jpeg" />
+      <span className="name">Todd Cullen</span>
+      <span className="role">General Partner</span>
+      <span className="bio">lorem ipsum</span>
+    </div>
     </div>
   </div>
 )
@@ -112,7 +148,7 @@ class NextSection extends React.Component {
 
   createLink(next) {
     return <div id="next">
-      <Link to={next}>V</Link>
+      <Link to={next}>▼</Link>
     </div>;
   }
 

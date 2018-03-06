@@ -13,6 +13,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   padding: 0;
   font-weight: normal;
   font-family: "Lato", sans-serif;
+  font-style:normal;
   color: #fff;
 }
 
@@ -47,18 +48,93 @@ body {
   padding: 20px 0px 10px 20px;
 }
 
+#next{
+  padding: 20px 0 0 20px;
+}
+
+#next a{
+  text-decoration: none;
+  color: white;
+
+}
+
 /* Home */
 #home h1 {
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   font-size: 54px;
 }
 
 #home h2 {
   text-align:center;
-  font-weight: 100;
   font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
 }
 /* https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwiPGQ.woff2 */
 /* https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2 */
+
+/* Thesis */
+#thesis {
+  height: 100%;
+  vertical-align: middle;
+  margin-left: 25%;
+  padding-top: 10%;
+  vertical-align: middle;
+  width: 50%;
+  text-align:center;
+}
+
+#thesis h1 {
+
+}
+
+#thesis p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  padding: 20px 0px 20px 0px;
+}
+
+/* Team */
+
+#team {
+  text-align:center;
+  width: 100%;
+  padding-top: 40px;
+}
+
+#team .members{
+  width: 600px;
+  margin-top: 40px;
+}
+
+#team h1{
+
+}
+
+#team .member {
+  float: right;
+  margin-right: 40px;
+}
+
+#team .name, #team .role, #team .bio {
+  display:block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+#team .name{
+  font-weight: 400;
+}
+
+#team img {
+  width: 250px;
+}
+
+/* Contact */
+
+#contact {
+  text-align: center;
+  padding-top: 40px;
+}
