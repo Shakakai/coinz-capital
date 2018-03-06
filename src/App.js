@@ -39,7 +39,12 @@ const Team = () => (
       <img className="photo" src="/todd.jpeg" />
       <span className="name">Todd Cullen</span>
       <span className="role">General Partner</span>
-      <span className="bio">CEO/Founder @ThoughtLeadr Founder/CTO @ReignDesign Built Unified Comm. Platform for Nortel. Consulted for IBM, T-Systems, and @bizsphere.</span>
+      <span className="bio">
+      Founder & CTO - <a href="http://www.thoughtleadr.com/">ThoughtLeadr</a><br/>
+      Founder - <a href="http://www.reigndesign.com">ReignDesign</a><br/>
+      R & D - Nortel<br/>
+      Engineer - IBM & T-Systems
+      </span>
     </div>
     </div>
   </div>
@@ -48,7 +53,8 @@ const Team = () => (
 const Contact = () => (
   <div id="contact">
     <h1>Get in Touch</h1>
-    <span id="email">Hello (at) Coinz (dot ) Capital</span>
+    <div id="media">Media Inquiries: <a href="mailto:media@coinz.capital">Media@coinz.capital</a></div>
+    <div id="investor">Investor Inquiries: <a href="mailto:investor@coinz.capital">Investor@Coinz.Capital</a></div>
   </div>
 )
 
@@ -67,6 +73,8 @@ class NextSection extends React.Component {
 
   constructor(props, context) {
     super(props, context);
+    this.setState({ redirect:null});
+    this.renderedRedirect = null;
     window.document.addEventListener("keydown", this.onKeyDown.bind(this));
   }
 
@@ -121,7 +129,11 @@ class NextSection extends React.Component {
   }
 
   renderRedirect() {
-    if(this.state && this.state.redirect) {
+    console.log(this.state);
+    console.log(this.props);
+    if(this.state && this.state.redirect && this.state.redirect !== this.renderedRedirect) {
+      console.log("RENDER REDIRECT")
+      this.renderedRedirect = this.state.redirect;
       return <Redirect to={this.state.redirect} />;
     }
     return null;

@@ -50,7 +50,7 @@ class Home3DModel extends React.Component {
     const ambient = new THREE.AmbientLight(0xffffff);
     this.scene.add(ambient);
 
-		const light = new THREE.PointLight( 16777215, 15);
+		const light = new THREE.PointLight( 16777215, 15, 0, 2);
     light.position.set(.5, 0, 1);
     light.position.z = 1000;
     light.position.multiplyScalar(700);

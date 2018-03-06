@@ -33,16 +33,28 @@ body {
   background-color: #131116;
 }
 
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
 /* Menu */
 
 #menu-bar {
   float: right;
   padding: 10px 10px 0px 0px;
-}
-
-#menu-bar a, #menu a{
-  text-decoration: none;
-  color: #fff;
 }
 
 #menu li{
@@ -52,12 +64,6 @@ body {
 
 #next{
   padding: 20px 0 0 20px;
-}
-
-#next a{
-  text-decoration: none;
-  color: white;
-
 }
 
 /* Home */
@@ -70,12 +76,10 @@ body {
   font-style: normal;
   font-weight: 400;
   text-align: center;
-  font-size: 54px;
 }
 
 #home h2 {
   text-align:center;
-  font-size: 28px;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
 }
@@ -96,10 +100,6 @@ body {
   text-align:center;
 }
 
-#thesis h1 {
-
-}
-
 #thesis p {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -115,31 +115,40 @@ body {
 }
 
 #team .members{
-  width: 600px;
-  margin-top: 40px;
-}
-
-#team h1{
-
+  margin: 40px auto;
+  width: 50%;
 }
 
 #team .member {
   float: right;
   margin-right: 40px;
+  width: 40%;
 }
 
 #team .name, #team .role, #team .bio {
   display:block;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
+  margin-bottom: 10px;
 }
 
 #team .name{
   font-weight: 400;
+  font-size: 36px;
+}
+
+#team .role {
+  font-weight: 100;
+  font-size: 26px;
 }
 
 #team img {
-  width: 250px;
+  width: 100%;
+}
+
+#team .bio {
+  font-weight: 100;
+  font-size: 14px;
 }
 
 /* Contact */
@@ -149,11 +158,7 @@ body {
   padding-top: 40px;
 }
 
-#contact h1 {
-  font-size: 44px;
-}
-
-#email {
+#investor, #media {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   padding-top: 20px;
