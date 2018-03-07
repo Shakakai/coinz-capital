@@ -64,6 +64,9 @@ a:hover{
 
 #next{
   padding: 20px 0 0 20px;
+  position: fixed;
+  bottom: 60px;
+  left: 0px;
 }
 
 /* Home */
@@ -91,7 +94,6 @@ a:hover{
 }
 
 #thesis div{
-  vertical-align: middle;
   margin-left: 25%;
   padding-top: 10%;
   vertical-align: middle;
@@ -104,6 +106,7 @@ a:hover{
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   padding: 20px 0px 20px 0px;
+  line-height: 28px;
 }
 
 /* Team */
@@ -134,16 +137,16 @@ a:hover{
 
 #team .name{
   font-weight: 400;
-  font-size: 36px;
+  font-size: 28px;
 }
 
 #team .role {
   font-weight: 100;
-  font-size: 26px;
+  font-size: 20px;
 }
 
 #team img {
-  width: 100%;
+  width: 80%;
 }
 
 #team .bio {
@@ -155,13 +158,15 @@ a:hover{
 
 #contact {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 10%;
+  vertical-align: middle;
+  height: 80%;
 }
 
 #investor, #media {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   padding-top: 20px;
-  font-size: 32px;
+  font-size: 22px;
   display:block;
 }
