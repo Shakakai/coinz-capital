@@ -102,6 +102,12 @@ a:hover{
   text-align:center;
 }
 
+@media (max-width: 500px) {
+  #thesis h1{
+    font-size: 30px;
+  }
+}
+
 #thesis p {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -126,6 +132,16 @@ a:hover{
   float: right;
   margin-right: 40px;
   width: 40%;
+}
+
+@media (max-width: 500px) {
+  #team .members{
+    width: 80%;
+    margin: 40px 0px 0px 40px;
+  }
+  #team .member{
+    width: 80%;
+  }
 }
 
 #team .name, #team .role, #team .bio {
@@ -169,4 +185,14 @@ a:hover{
   padding-top: 20px;
   font-size: 22px;
   display:block;
+}
+
+@media (max-width: 500px) {
+  #contact h1{
+    font-size: 32px;
+  }
+
+  #investor, #media {
+    font-size: 18px;
+  }
 }

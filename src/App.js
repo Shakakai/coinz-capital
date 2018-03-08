@@ -20,7 +20,9 @@ const Thesis = () => (
   <div id="thesis">
     <div>
     <h1>Investment Thesis</h1>
-    <p>With any revolutionary breakthrough in technology, foundational pieces of the ecosystem need to be put in place before mainstream adoption can occur. We’re a decade into the blockchain revolution and high value core components of the future of computing have yet to be realized. At Coinz Venture Partners, we want to accelerate the adoption of blockchain technologies by investing in the critical components needed to bring it into everyday life.</p>
+    <p>
+At Coinz Capital, we want to accelerate the adoption of blockchain technologies by investing in the critical components needed to bring it into everyday life. Our focus is developing and supporting companies working on advanced cryptography, blockchain 3.0 platforms, next generation exchanges, token compliance systems, and the emerging blockchain economy. We're a decade into the blockchain revolution but there's still much of the core ecosystem that has yet to come to fruition. Coinz Capital is here to fund that gap.
+    </p>
     </div>
   </div>
 )
@@ -32,13 +34,13 @@ const Team = () => (
     <div className="member">
       <img className="photo" src="/adam.jpeg" />
       <span className="name">Adam Gering</span>
-      <span className="role">General Partner</span>
+      <span className="role">Founder</span>
       <span className="bio">Cypherpunk, startup advisor, investor, founder.</span>
     </div>
     <div className="member">
       <img className="photo" src="/todd.jpeg" />
       <span className="name">Todd Cullen</span>
-      <span className="role">General Partner</span>
+      <span className="role">Founder</span>
       <span className="bio">
       Founder & CTO - <a href="http://www.thoughtleadr.com/">ThoughtLeadr</a><br/>
       Founder - <a href="http://www.reigndesign.com">ReignDesign</a><br/>
@@ -54,7 +56,7 @@ const Contact = () => (
   <div id="contact">
     <h1>Get in Touch</h1>
     <div id="media">Media Inquiries: <a href="mailto:media@coinz.capital">Media@coinz.capital</a></div>
-    <div id="investor">Investor Inquiries: <a href="mailto:investor@coinz.capital">Investor@Coinz.Capital</a></div>
+    <div id="investor">Investor Inquiries: <a href="mailto:investor@coinz.capital">Investor@coinz.Capital</a></div>
   </div>
 )
 
@@ -73,7 +75,7 @@ class NextSection extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    this.setState({ redirect:null});
+
     this.renderedRedirect = null;
     window.document.addEventListener("keydown", this.onKeyDown.bind(this));
   }
@@ -129,10 +131,10 @@ class NextSection extends React.Component {
   }
 
   renderRedirect() {
-    console.log(this.state);
-    console.log(this.props);
+    //console.log(this.state);
+    //console.log(this.props);
     if(this.state && this.state.redirect && this.state.redirect !== this.renderedRedirect) {
-      console.log("RENDER REDIRECT")
+      //console.log("RENDER REDIRECT")
       this.renderedRedirect = this.state.redirect;
       return <Redirect to={this.state.redirect} />;
     }
